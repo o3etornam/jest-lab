@@ -25,7 +25,7 @@ test('findByEmail returns correct user', () => {
 test('findByEmail returns null for non-existent email', () => {    
     let user = new User(1234, "Santiago", "santiago@generation.org");
     userController.add(user);    
-    expect(userController.findByEmail("nonexistent@generation.org")).toBeNull();
+    expect(userController.findByEmail("nonexistent@generation.org")).toBe(undefined);
 });
 
 test('findById returns correct user', () => {    
@@ -37,5 +37,5 @@ test('findById returns correct user', () => {
 test('findById returns null for non-existent id', () => {    
     let user = new User(1234, "Santiago", "santiago@generation.org");
     userController.add(user);    
-    expect(userController.findById(9999)).toBeNull();
+    expect(userController.findById(9999)).toBe(undefined);
 });
